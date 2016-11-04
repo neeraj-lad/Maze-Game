@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>Mz</title>
+
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+
+<!--jQuery-->
+<script
+  src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+    integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+	  crossorigin="anonymous"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="mazegenerator.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+	<div class="row">
+		<div class="col-lg-4">
+			<div class="thumbnail">
+				<table class="maze" id="maze-bfs">
+				<tbody></tbody>
+				</table>
+
+				<div class="caption">
+					<h3>BFS</h3>
+					<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-4">
+			<div class="thumbnail">
+				<table class="maze" id="maze-dfs">
+				<tbody></tbody>
+				</table>
+
+				<div class="caption">
+					<h3>DFS</h3>
+					<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-4">
+		</div>
+	</div>
+
+<script>
+	initMaze(20, 20);
+    newMaze();
+    //newMaze('maze-bfs');
+    printMaze('maze-dfs');
+    printMaze('maze-bfs');
+
+	var bfsRoute = bfs();	
+    printRoute(bfsRoute, 'maze-bfs'); 
+	
+	var dfsRoute = dfs();	
+    printRoute(dfsRoute, 'maze-dfs'); 
+</script>
+
+</body>
+</html>
